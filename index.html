@@ -11,6 +11,11 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -25,116 +30,121 @@
     }
 
     /* Navigation Styles */
-     nav {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 4px 20px rgba(27, 94, 32, 0.3);
-        }
+    nav {
+      background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      width: 100vw;
+      max-width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 4px 20px rgba(27, 94, 32, 0.3);
+      box-sizing: border-box;
+      left: 0;
+      right: 0;
+    }
 
-        .left-text {
-            font-size: clamp(18px, 4vw, 24px);
-            color: white;
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+    .left-text,
+    .left-text:link,
+    .left-text:visited {
+      font-size: clamp(18px, 4vw, 24px);
+      color: white;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
 
-        .left-text img {
-            width: clamp(35px, 8vw, 50px);
-            height: clamp(35px, 8vw, 50px);
-            margin-right: 12px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-        }
+    .left-text img {
+      width: clamp(35px, 8vw, 50px);
+      height: clamp(35px, 8vw, 50px);
+      margin-right: 12px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
 
-        .left-text img:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
+    .left-text img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
 
-        .left-text span {
-            margin-left: 5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
+    .left-text span {
+      margin-left: 5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
 
-        .nav-list {
-            list-style-type: none;
-            display: flex;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
+    .nav-list {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
 
-        .nav-list li {
-            margin: 0;
-        }
+    .nav-list li {
+      margin: 0;
+    }
 
-        .nav-list a {
-            text-decoration: none;
-            color: white;
-            font-size: clamp(14px, 2.5vw, 16px);
-            text-transform: uppercase;
-            padding: 10px 18px;
-            display: block;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 25px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
+    .nav-list a {
+      text-decoration: none;
+      color: white;
+      font-size: clamp(14px, 2.5vw, 16px);
+      text-transform: uppercase;
+      padding: 10px 18px;
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 25px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
 
-        .nav-list a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #a5d6a7;
-            bottom: 5px;
-            left: 0;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
+    .nav-list a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #a5d6a7;
+      bottom: 5px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
 
-        .nav-list a:hover {
-            color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
+    .nav-list a:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
 
-        .nav-list a:hover::after {
-            transform: scaleX(0.8);
-            transform-origin: bottom center;
-        }
+    .nav-list a:hover::after {
+      transform: scaleX(0.8);
+      transform-origin: bottom center;
+    }
 
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: rgba(255,255,255,0.1);
-            border: 2px solid rgba(255,255,255,0.3);
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
+    .menu-toggle {
+      display: none;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
 
-        .menu-toggle:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
+    .menu-toggle:hover {
+      background: rgba(255,255,255,0.2);
+    }
 
     /* About Us / Hero Section with Class Picture */
     .about-section {
@@ -146,7 +156,6 @@
       overflow: hidden;
     }
 
-    /* Background Image Layer */
     .about-bg-image {
       position: absolute;
       top: 0;
@@ -160,7 +169,6 @@
       z-index: 0;
     }
 
-    /* Dark Overlay */
     .about-overlay {
       position: absolute;
       top: 0;
@@ -176,7 +184,6 @@
       z-index: 1;
     }
 
-    /* Corner Borders - Thin Lines on Corners Only */
     .corner-borders {
       position: absolute;
       top: 30px;
@@ -198,21 +205,18 @@
       transition: all 0.3s ease;
     }
 
-    /* Top Left Corner */
     .corner-borders::before {
       top: 0;
       left: 0;
       border-width: 3px 0 0 3px;
     }
 
-    /* Top Right Corner */
     .corner-borders::after {
       top: 0;
       right: 0;
       border-width: 3px 3px 0 0;
     }
 
-    /* Bottom Corners */
     .corner-borders .bottom-left,
     .corner-borders .bottom-right {
       position: absolute;
@@ -235,7 +239,6 @@
       border-width: 0 3px 3px 0;
     }
 
-    /* Hover effect for corners */
     .about-section:hover .corner-borders::before,
     .about-section:hover .corner-borders::after,
     .about-section:hover .corner-borders .bottom-left,
@@ -245,7 +248,6 @@
       border-color: #59985B;
     }
 
-    /* Content Container */
     .about-content {
       position: relative;
       z-index: 3;
@@ -268,22 +270,21 @@
       }
     }
 
-    /* Class Logo - No white border, green glow instead */
     .about-logo {
-  width: clamp(120px, 25vw, 200px);
-  height: clamp(120px, 25vw, 200px);
-  border-radius: 50%;
-  border: none;
-  box-shadow: 
-    0 0 0 4px #59985B,
-    0 10px 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(89, 152, 91, 0.4);
-  display: block;
-  margin: 0 auto 30px auto;
-  object-fit: cover;
-  transition: all 0.3s ease;
-  background-color: #59985B;
-}
+      width: clamp(120px, 25vw, 200px);
+      height: clamp(120px, 25vw, 200px);
+      border-radius: 50%;
+      border: none;
+      box-shadow: 
+        0 0 0 4px #59985B,
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(89, 152, 91, 0.4);
+      display: block;
+      margin: 0 auto 30px auto;
+      object-fit: cover;
+      transition: all 0.3s ease;
+      background-color: #59985B;
+    }
 
     .about-logo:hover {
       transform: scale(1.05) rotate(3deg);
@@ -293,7 +294,6 @@
         0 0 50px rgba(89, 152, 91, 0.6);
     }
 
-    /* Section Title - Better Styling */
     .about-title {
       font-size: clamp(36px, 7vw, 56px);
       font-weight: 800;
@@ -302,12 +302,10 @@
       letter-spacing: 4px;
       position: relative;
       display: inline-block;
-      /* Gradient text effect */
       background: linear-gradient(135deg, #ffffff 0%, #59985B 50%, #ffffff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      /* Text shadow for depth */
       filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.8));
       animation: shimmer 3s infinite;
     }
@@ -329,7 +327,6 @@
       border-radius: 2px;
     }
 
-    /* Description Text */
     .about-description {
       font-size: clamp(16px, 2.5vw, 22px);
       line-height: 1.8;
@@ -342,7 +339,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Highlight Box */
     .highlight-box {
       background: rgba(89, 152, 91, 0.15);
       border-left: 4px solid #59985B;
@@ -362,7 +358,6 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    /* Hashtag */
     .hashtag {
       display: inline-block;
       background: linear-gradient(135deg, #59985B, #487549);
@@ -391,7 +386,6 @@
       50% { transform: scale(1.03); }
     }
 
-    /* Scroll Indicator */
     .scroll-indicator {
       position: absolute;
       bottom: 30px;
@@ -435,7 +429,6 @@
       60% { transform: translateX(-50%) translateY(-5px); }
     }
 
-    /* Content Section */
     .content {
       flex: 1;
       padding: 80px 20px;
@@ -443,7 +436,6 @@
       color: white;
     }
 
-    /* Better Section Header */
     .content h1 {
       text-align: center;
       margin-bottom: 50px;
@@ -453,7 +445,6 @@
       position: relative;
       padding-bottom: 25px;
       font-weight: 800;
-      /* Gradient text */
       background: linear-gradient(90deg, #59985B, #ffffff, #59985B);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -488,14 +479,12 @@
       border-radius: 2px;
     }
 
-    /* Must Watch Section */
     .must-watch {
       padding: 20px 0;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* Better Sub-header */
     .must-watch h2 {
       text-transform: uppercase;
       font-weight: 700;
@@ -596,9 +585,9 @@
       line-height: 1.6;
       margin-bottom: 15px;
       text-align: justify;
-      text-align-last: center; /* or 'left' or 'justify' */
-      hyphens: auto; /* Optional: allows word breaking with hyphens */
-}
+      text-align-last: center;
+      hyphens: auto;
+    }
 
     .video-time {
       font-size: 13px;
@@ -608,7 +597,6 @@
       font-weight: 500;
     }
 
-    /* Footer Styles */
     footer {
       background-color: #0a0a0a;
       color: white;
@@ -692,10 +680,9 @@
       text-transform: uppercase;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       nav {
-        padding: 10px 15px;
+        padding: 15px 20px;
       }
 
       .menu-toggle {
@@ -706,12 +693,13 @@
         display: none;
         width: 100%;
         flex-direction: column;
-        background-color: #487549;
+        background: rgba(27, 94, 32, 0.95);
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 10px;
-        border-radius: 0 0 10px 10px;
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+        box-sizing: border-box;
       }
 
       .nav-list.active {
@@ -725,7 +713,7 @@
 
       .nav-list a {
         padding: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
       }
 
       .corner-borders {
@@ -774,9 +762,6 @@
           0 10px 40px rgba(0, 0, 0, 0.5),
           0 0 30px rgba(89, 152, 91, 0.4);
       }
-	{
-        padding: 60px 15px;
-      }
 
       .content {
         padding: 60px 15px;
@@ -789,7 +774,6 @@
       }
     }
 
-    /* Scrollbar Styling */
     ::-webkit-scrollbar {
       width: 12px;
     }
@@ -812,69 +796,56 @@
 <body>
 
   <nav>
-    <div class="left-text">
+    <!-- FIXED: Changed from div to a href for clickable logo -->
+    <a href="index.html" class="left-text">
       <img src="Logo.jpg" alt="Mendel Logo">
       <span>MENDEL</span>
-    </div>
+    </a>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
     <ul class="nav-list" id="navList">
-  <li><a href="#about">About</a></li>
-  <li><a href="PROFILE.html">Students</a></li>
-  <li><a href="performance.html">Performance Tasks</a></li>
-  <li><a href="achievements2.html">Achievements</a></li>
-</ul>
+      <li><a href="#about">About</a></li>
+      <!-- FIXED: Changed from PROFILE.html to profile.html (lowercase) -->
+      <li><a href="profile.html">Students</a></li>
+      <li><a href="performance.html">Performance Tasks</a></li>
+      <li><a href="achievements2.html">Achievements</a></li>
+    </ul>
   </nav>
   
-  <!-- About Us Section with Class Picture Background -->
   <section class="about-section" id="about">
-    <!-- Background Image -->
     <div class="about-bg-image"></div>
-    
-    <!-- Dark Overlay -->
     <div class="about-overlay"></div>
-    
-    <!-- Corner Borders -->
     <div class="corner-borders">
       <div class="bottom-left"></div>
       <div class="bottom-right"></div>
     </div>
 
-    <!-- Content -->
     <div class="about-content">
       <img src="Logo.jpg" alt="Mendel Class Logo" class="about-logo">
-      
       <h1 class="about-title">About Us</h1>
-      
       <p class="about-description">
         Mendel 2024–2025 is a chaotic yet classically unforgettable experience, a whirlwind of 
         brilliance, banter, and barely making deadlines. It's where organized chaos meets academic
         excellence, where group projects feel like survival challenges, and where laughter echoes
         louder than late-night cramming.
       </p>
-      
       <div class="highlight-box">
         <p class="highlight-text">
           It's not just a class. It's a community, a chaotic mix
           of creativity, resilience, and unbreakable bonds.
         </p>
       </div>
-      
       <a href="#performance" class="hashtag">#BastaMendelGorabels</a>
     </div>
     
-    <!-- Scroll Indicator -->
     <div class="scroll-indicator" onclick="document.getElementById('performance').scrollIntoView({behavior: 'smooth'})">
       <span></span>
     </div>
   </section>
 
-  <!-- Content Section -->
   <section class="content" id="performance">
     <h1>Must See Only in Mendel</h1>
-    
     <div class="must-watch">
       <div class="grid-container">
-        <!-- Card 1 -->
         <article class="card">
           <img src="Logo.jpg" alt="MendelTalks">
           <h3 class="card-title">MendelTalks</h3>
@@ -886,7 +857,6 @@
           <div class="video-time">2025 | TCNHS</div>
         </article>
 
-        <!-- Card 2 -->
         <article class="card">
           <img src="GeneTink.jpg" alt="Genetink">
           <h3 class="card-title">Genetink</h3>
@@ -898,11 +868,10 @@
           <div class="video-time">2025 | TCNHS</div>
         </article>
 
-        <!-- Card 3 -->
         <article class="card">
           <h3 class="card-title">More Coming Soon</h3>
-          <p class="card-description justify-text">
-           Stay tuned for more from Mendel 2024–2025. As we step into different paths and new schools, we carry with us the memories, laughter, and moments we shared. Though we may be apart, these stories stay with us, so keep checking back for the memories that made our time unforgettable.
+          <p class="card-description">
+            Stay tuned for more from Mendel 2024–2025. As we step into different paths and new schools, we carry with us the memories, laughter, and moments we shared. Though we may be apart, these stories stay with us, so keep checking back for the memories that made our time unforgettable.
           </p>
           <div class="video-time">Coming Soon | TCNHS</div>
         </article>
@@ -910,31 +879,26 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="social-icons">
       <a href="https://www.facebook.com/TCNHS11STEMMENDEL"><span>f</span></a>
-         <a href="https://www.instagram.com/newgenes.11?igsh=eW5mOWlxYXFhaHJw"><span>📷</span></a>
-      
+      <a href="https://www.instagram.com/newgenes.11?igsh=eW5mOWlxYXFhaHJw"><span>📷</span></a>
     </div>
     <p>&copy; 2025 MENDELIAN CHRONICLES | All Rights Reserved</p>
   </footer>
 
   <script>
-    // Mobile Menu Toggle
     function toggleMenu() {
       const navList = document.getElementById('navList');
       navList.classList.toggle('active');
     }
 
-    // Close menu when clicking on a link
     document.querySelectorAll('.nav-list a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navList').classList.remove('active');
       });
     });
 
-    // Smooth scroll for all navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -948,7 +912,6 @@
       });
     });
 
-    // Add scroll effect to navbar
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (window.scrollY > 50) {
@@ -960,7 +923,6 @@
       }
     });
 
-    // Hide scroll indicator when scrolling down
     window.addEventListener('scroll', () => {
       const indicator = document.querySelector('.scroll-indicator');
       if (window.scrollY > 100) {
